@@ -13,12 +13,13 @@ public class GameManager : MonoBehaviour
     public GameObject candle;
     public GameObject crystal;
     public Light candleLight;
+    public ParticleSystem particleSystem;
 
-    Animation drawer1Animation;
-    Animation drawer2Animation;
-    Animation miniDdrawerAnimation;
-    Animation bookAnimation;
-    Animation journalAnimation;
+    Animator drawer1Animator;
+    Animator drawer2Animator;
+    Animator miniDrawerAnimator;
+    Animator bookAnimator;
+    Animator journalAnimator;
     
 
     public bool drawer1Open = false;
@@ -47,16 +48,16 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        drawer1Animation = drawer1.GetComponent<Animation>();
-        drawer2Animation = drawer2.GetComponent<Animation>();
-        miniDdrawerAnimation = miniDrawer.GetComponent<Animation>();
-        bookAnimation = book.GetComponent<Animation>();
-        journalAnimation = journal.GetComponent<Animation>();
+        drawer1Animator = drawer1.GetComponent<Animator>();
+        drawer2Animator = drawer2.GetComponent<Animator>();
+        miniDrawerAnimator = miniDrawer.GetComponent<Animator>();
+        bookAnimator = book.GetComponent<Animator>();
+        journalAnimator = journal.GetComponent<Animator>();
 
 
-        drawer1Animation.Play("drawer_1_idle");
-        drawer2Animation.Play("drawer_2_idle");
-        miniDdrawerAnimation.Play("Idle");
+        drawer1Animator.Play("drawer_1_idle",0,0);
+        drawer2Animator.Play("drawer_2_idle",0,0);
+        miniDrawerAnimator.Play("Idle",0,0);
     }
 
     void Update()
@@ -67,13 +68,35 @@ public class GameManager : MonoBehaviour
     public void CheckRaycast(string objectName)
     {
         Debug.Log("GameManager received rayhit " + objectName);
+
+        switch(objectName)
+        {
+            case "FlippyBook":
+                FlipPage();
+                break;
+            case "Drawer":
+                OpenDrawer1();
+                break;
+            case "Drawer 2":
+                OpenDrawer2();
+                break;
+            case "mini drawer":
+                OpenMiniDrawer();
+                break;
+            case "Candle":
+                ExtinguishCandle();
+                break;
+            case "BigCrystal":
+                TapCrystal();
+                break;
+        }
     }
 
-    /*
+    
 
     public void OpenDrawer1()
     {
-
+        drawer1Animator.SetBool("OpenDrawer1", true);
     }
 
     public void CloseDrawer1() 
@@ -105,6 +128,7 @@ public class GameManager : MonoBehaviour
     { 
     
     }
+    
 
     public void FlipPage()
     {
@@ -113,7 +137,7 @@ public class GameManager : MonoBehaviour
 
     public void ExtinguishCandle()
     {
-
+        candleLight.enabled = false;
     }
 
     public void TapCrystal()
@@ -121,6 +145,6 @@ public class GameManager : MonoBehaviour
 
     }
 
-    */
+    
 
 }
