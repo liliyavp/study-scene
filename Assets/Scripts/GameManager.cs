@@ -138,6 +138,7 @@ public class GameManager : MonoBehaviour
     public void ExtinguishCandle()
     {
         candleLight.enabled = false;
+        particleSystem.Stop();
     }
 
     public void TapCrystal()
