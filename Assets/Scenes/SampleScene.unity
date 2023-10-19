@@ -2020,7 +2020,7 @@ MonoBehaviour:
   drawer2: {fileID: 284752436368414351}
   miniDrawer: {fileID: 1946280153}
   book: {fileID: 849940536}
-  journal: {fileID: 0}
+  journal: {fileID: 1537520212}
   candle: {fileID: 1554409211}
   crystal: {fileID: 191485379}
   candleLight: {fileID: 510955442}
@@ -14195,7 +14195,7 @@ Animator:
   m_GameObject: {fileID: 849940536}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 007abbdc63b3943489815a39d35da967, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -21068,6 +21068,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 635de0f705d25e34bb77a0b801ecdc41, type: 3}
   m_PrefabInstance: {fileID: 395744991}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1537520212 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 08a230f87843b8f4ea2320ab60962300, type: 3}
+  m_PrefabInstance: {fileID: 1797807841}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1554409211
 GameObject:
