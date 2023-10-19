@@ -97,38 +97,26 @@ public class GameManager : MonoBehaviour
     public void OpenDrawer1()
     {
         drawer1Animator.SetBool("OpenDrawer1", true);
-    }
-
-    public void CloseDrawer1() 
-    {
+        StartCoroutine(WaitWhileDrawerOpens(1));
+        drawer1Animator.SetBool("IdleOpenDrawer1", true);
+       // StartCoroutine(WaitWhileDrawerOpens(5));
         
-    }
-
-    public void Drawer1Idle()
-    {
-
+        //set up drawer closes bool and it will be fine probably
     }
 
     public void OpenDrawer2() 
     { 
-    
-    }
-
-    public void CloseDrawer2()
-    {
-
+        drawer2Animator.SetBool("OpenDrawer2", true);
+        StartCoroutine(WaitWhileDrawerOpens(1));
+        drawer2Animator.SetBool("IdleOpenDrawer2", true);
     }
 
     public void OpenMiniDrawer() 
     { 
-    
+        miniDrawerAnimator.SetBool("OpenMiniDrawer", true);
+        StartCoroutine(WaitWhileDrawerOpens(1));
+        miniDrawerAnimator.SetBool("IdleOpenMiniDrawer", true);
     }
-
-    public void CloseMiniDrawer() 
-    { 
-    
-    }
-    
 
     public void FlipPage()
     {
@@ -144,6 +132,11 @@ public class GameManager : MonoBehaviour
     public void TapCrystal()
     {
 
+    }
+
+    IEnumerator WaitWhileDrawerOpens(int wait)
+    {
+        yield return new WaitForSeconds(wait);
     }
 
     
