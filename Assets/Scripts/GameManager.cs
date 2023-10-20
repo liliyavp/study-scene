@@ -15,6 +15,11 @@ public class GameManager : MonoBehaviour
     public Light candleLight;
     public ParticleSystem particleSystem;
 
+    public Camera mainCam;
+    public Camera drawer1Cam;
+    public Camera drawer2Cam;
+
+
     Animator drawer1Animator;
     Animator drawer2Animator;
     Animator miniDrawerAnimator;
@@ -96,12 +101,16 @@ public class GameManager : MonoBehaviour
 
     public void OpenDrawer1()
     {
-        drawer1Animator.SetBool("OpenDrawer1", true);
-        StartCoroutine(WaitWhileDrawerOpens(1));
-        drawer1Animator.SetBool("IdleOpenDrawer1", true);
-        StartCoroutine(WaitWhileDrawerOpens(5));
-        drawer1Animator.SetBool("CloseDrawer1", true);
-        //set up drawer closes bool and it will be fine probably
+        drawer1Animator.Play("drawer_1_opening", 0,0);
+        StartCoroutine(WaitWhileDrawerOpens(2));
+        //drawer1Animator.Play("drawer_1_open_idle", 0,0);  
+        CloseDrawer1();
+        
+    }
+
+    public void CloseDrawer1()
+    {
+        drawer1Animator.Play("drawer_1_closing", 0,0);
     }
 
     public void OpenDrawer2() 
@@ -140,6 +149,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator WaitWhileDrawerOpens(int wait)
     {
+        StopAllCoroutines();
         yield return new WaitForSeconds(wait);
     }
 
