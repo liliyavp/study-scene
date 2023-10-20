@@ -99,8 +99,8 @@ public class GameManager : MonoBehaviour
         drawer1Animator.SetBool("OpenDrawer1", true);
         StartCoroutine(WaitWhileDrawerOpens(1));
         drawer1Animator.SetBool("IdleOpenDrawer1", true);
-       // StartCoroutine(WaitWhileDrawerOpens(5));
-        
+        StartCoroutine(WaitWhileDrawerOpens(5));
+        drawer1Animator.SetBool("CloseDrawer1", true);
         //set up drawer closes bool and it will be fine probably
     }
 
@@ -109,6 +109,8 @@ public class GameManager : MonoBehaviour
         drawer2Animator.SetBool("OpenDrawer2", true);
         StartCoroutine(WaitWhileDrawerOpens(1));
         drawer2Animator.SetBool("IdleOpenDrawer2", true);
+        StartCoroutine(WaitWhileDrawerOpens(5));
+        drawer2Animator.SetBool("CloseDrawer2", true);
     }
 
     public void OpenMiniDrawer() 
@@ -116,6 +118,8 @@ public class GameManager : MonoBehaviour
         miniDrawerAnimator.SetBool("OpenMiniDrawer", true);
         StartCoroutine(WaitWhileDrawerOpens(1));
         miniDrawerAnimator.SetBool("IdleOpenMiniDrawer", true);
+        StartCoroutine(WaitWhileDrawerOpens(5));
+        miniDrawerAnimator.SetBool("CloseMiniDrawer", true);
     }
 
     public void FlipPage()
