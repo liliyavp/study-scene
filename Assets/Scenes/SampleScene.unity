@@ -2022,6 +2022,9 @@ MonoBehaviour:
   crystal: {fileID: 191485379}
   candleLight: {fileID: 510955442}
   particleSystem: {fileID: 1874571753}
+  mainCam: {fileID: 0}
+  drawer1Cam: {fileID: 0}
+  drawer2Cam: {fileID: 0}
   drawer1Open: 0
   drawer2Open: 0
 --- !u!4 &261008678
