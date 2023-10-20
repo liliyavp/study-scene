@@ -110,7 +110,8 @@ public class GameManager : MonoBehaviour
 
     public void CloseDrawer1()
     {
-        drawer1Animator.Play("drawer_1_closing", 0,0);
+        //drawer1Animator.Play("drawer_1_closing", 0,0);
+        //waitforseconds doesn't wait for whatever reason
     }
 
     public void OpenDrawer2() 
